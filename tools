@@ -1,0 +1,110 @@
+Basic Tools FOr Environment Setup that are used in KPIT: 
+Please go through in depth on these services we will connect later
+1. Consul
+2. Keycloak And Cognito
+3. Postgresql
+4. Jhipster
+5. Microservices
+6. Monoliths
+7. Gateway
+8. Git (create your own project in Git and push changes there by creating and forking out branches)
+9. SpringBoot Framework
+10. node setup through nvm
+11. angular-cli
+12. SageMaker , Glue, DataBrew , QuickSight, Athena 
+
+
+
+
+
+Open Jdk
+python
+docker
+postgresql
+consul
+vscode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily.
+Keycloak is an open source identity and access management solution for modern Applications and Services. Add authentication to applications and secure services with minimum fuss.
+
+Amazon Cognito and Keycloak are both identity management solutions that provide authentication and user management capabilities, but they differ in terms of deployment, integration options, and feature sets.
+
+Amazon Cognito is a fully managed service provided by AWS that offers user authentication, authorization, and user management functionalities. It is primarily designed for cloud-based applications and supports integration with other AWS services. Amazon Cognito provides features such as user sign-up and sign-in, social identity provider integration, multi-factor authentication, and user attribute management. It also offers built-in support for mobile and web applications and provides easy integration with AWS ecosystem services.
+
+Keycloak, on the other hand, is an open-source identity and access management (IAM) solution. It is self-hosted and can be deployed on-premises or in the cloud. Keycloak offers features like user authentication, authorization, user federation, single sign-on (SSO), and social login. It supports various identity protocols, including OpenID Connect and SAML, and provides extensive customization and configuration options.
+
+One key difference is that Amazon Cognito is a fully managed service, while Keycloak requires self-hosting and management. Additionally, Amazon Cognito is tightly integrated with the AWS ecosystem, making it convenient for developers using AWS services. Keycloak, being an open-source solution, offers greater customization and flexibility in terms of deployment options and feature extensions.
+
+
+
+Docker Daemon - The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.
+Docker Client - The command line tool that allows the user to interact with the daemon. More generally, there can be other forms of clients too - such as Kitematic which provide a GUI to the users.
+Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
+
+
+
+Monolithic
+
+Microservices
+
+Built as a single unit application
+
+Built as a combination of multiple interconnected services that are run independently
+
+Easier deployment
+
+Complex deployment
+
+Re-usability is difficult
+
+Re-usability is simple
+
+Single codebase
+
+Multiple code files
+
+Useful for smaller projects
+
+Useful for complex projects
+
+Easier testing 
+
+Difficult testing and debugging
+
+
+
+
+How Gateways Work?
+The gateway receives data from devices within the network.
+After receiving data the gateway intercept and analyze data packets, which include analyzing packet header, payload etc.
+Based on the analysis of the data packets, the gateway calculate an appropriate destination address of data packet. It then routes the data packets to their destination address.
+In some cases, the gateway might also want to transform the format of the obtained data to ensure compatibility at the receiver.
+Once the data packets have been analyzed, routed, and converted, then the gateway sends the last packets to their respective destinations address inside the network.
+
+
+Advantages of Gateways
+Gateway helps in connecting two different network.
+Gateway is used to filters and does not allow anything that can harm to the network.
+Gateway is worked as the protocol converter.
+Gateway is the highly secure device that provides security from external attacks.
+
+Limitations of Gateways
+There are few limitations of gateways as well. Here are some of them:
+Gateway causes time delay since the conversion of data according to the network requires time.
+Failure of the gateway might lead to the failure of connection with other networks.
+The implementation of Gateway is very complex and it is not cost efficient.
+Gateway is hard to manage
+

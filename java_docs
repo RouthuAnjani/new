@@ -1,0 +1,425 @@
+JAVA
+1995 by Sun Microsystems (by James Gosling)
+JShell--The Java Shell tool (JShell) is an interactive tool for learning the Java programming language and prototyping Java code. JShell is a Read-Evaluate-Print Loop (REPL), which evaluates declarations, statements, and expressions as they are entered and immediately shows the results.
+Readable Language, Maintainable, Platform Independent, Object oriented, Strongly typed language
+WORA
+Collection API
+Exception
+JVM (java virtual machine)(not independent)---byte code
+java code(.java file)--compiler(javac)--Byte code(.class file)--JVM
+JDK (java development kit)
+JRE (java runtime environment)
+JVM with libraries are a part of JRE
+JDK--JRE--JVM
+public static void main(String args[])----public is an access specifier, static is a Keyword, the void is the Return Type, main is the default method name and String args [] is the array of type string.
+Data Types-Primitive and non primitive
+Primitive--integers(byte(1), short(2), int(4), long(8)), float(double(8)defult value, float(4)), char(2), Boolean
+A constant value that is assigned to the variable can be called a literal.
+Type casting is when you assign a value of one primitive data type to another type.
+In Java, there are two types of casting:
+Widening Casting (automatically) - converting a smaller type to a larger type size
+byte -> short -> char -> int -> long -> float -> double
+Narrowing Casting (manually) - converting a larger type to a smaller size type
+double -> float -> long -> int -> char -> short -> byte
+Pre increment ++n increment and then fetch the value
+post increment n++ fetch the value and then increment
+Ternary operator---condition?res1(if condition satisfies):res2(if condition fails)
+Object will have properties and behaviours
+Class is a blueprint of an object
+Method Overloading---same method names but diff parameters
+Method overriding---same method name and same perameters
+Inside JVM Memory we have 2 parts Stack(LIFO) and Heap(Open space) 
+Local variables are part of stack not heap, Instance variables are part of heap.
+everytime when we are looking for obj.add()(reference variable) we are in main looking at stack which has address and jumping into the heap searching that address for the object.
+Jagged Array---A jagged array is an array of arrays such that member arrays can be of different sizes, i.e., we can create a 2-D array but with a variable number of columns in each row. These types of arrays are also known as Jagged arrays. 
+Strings are immutable(cannot change)
+StringBuffer will give the buffer size
+String Buffer is thread safe and string builder is not.
+Static variable is shared by all the objects.
+Static variables can be called directly with their class name not with objects.
+Static block will be called only once and called first.
+We can use a static variable inside a static method but we can't use a non-static variable inside a static method.
+Private can only be accessed within the class.
+This is a keyword that refers to the current object in a method or constructor.
+The most common use of the this keyword is to eliminate the confusion between class attributes and parameters with the same name (because a class attribute is shadowed by a method or constructor parameter). If you omit the keyword in the example above, the output would be "0" instead of "5".
+this can also be used to:
+Invoke current class constructor
+Invoke current class method
+Return the current class object
+Pass an argument in the method call
+Pass an argument in the constructor call
+Constructor in java is used to create the instance of the class. Constructors are almost similar to methods except for two things - its name is the same as the class name and it has no return type. Sometimes constructors are also referred to as special methods to initialize an object
+A Java constructor cannot be abstract, static, final, and synchronized
+every constructor has super().
+Naming convention(camelCasing)----class and interface---Calc,Runnable         variable and method---marks(),show()         constants--PIE,BRAND
+In Java, an anonymous object is an object that is created without giving it a name. Anonymous objects are often used to create objects on the fly and pass them as arguments to methods. Here is an example of how to create and use an anonymous object in Java.
+Multiple inheritance does not works in java
+Polymorphism---many behaviours
+compile time polymorphism(overloading) and run time polymorphism(overriding)
+Dynamic Method Dispatch or Runtime Polymorphism in Java
+Dynamic method dispatch is the mechanism by which a call to an overridden method is resolved at run time, rather than compile time.
+final keyword can be used with a variable(cannot change the value of it), method(no one can override ur method), class(cannot inherit)
+If you make any variable as final, you cannot change the value of final variable(It will be constant).
+The java equals() is a method of lang.Object class, and it is used to compare two objects.
+To compare two objects that whether they are the same, it compares the values of both the object's attributes.
+By default, two objects will be the same only if stored in the same memory location. public boolean equals(Object obj)  
+A hashcode is an integer value associated with every object in Java, facilitating the hashing in hash tables.
+To get this hashcode value for an object, we can use the hashcode() method in Java. It is the means hashcode() method that returns the integer hashcode value of the given object.
+Since this method is defined in the Object class, hence it is inherited by user-defined classes also.
+The hashcode() method returns the same hash value when called on two objects, which are equal according to the equals() method. And if the objects are unequal, it usually returns different hash values. public int hashCode() 
+Upcasting is a type of object typecasting in which a child object is typecasted to a parent class object. By using the Upcasting, we can easily access the variables and methods of the parent class to the child class.  Here, we don't access all the variables and the method. We access only some specified variables and methods of the child class. Upcasting is also known as Generalization and Widening. Parent p = new Parent()
+downcasting Parent p = new Child() Child c = (Child)p;
+In Java, we rarely use Upcasting. We use it when we need to develop a code that deals with only the parent class. Downcasting is used when we need to develop a code that accesses behaviors of the child class.
+
+S.No	   Upcasting	                                                                      Downcasting
+1.	A child object is typecasted to a parent object.	                            The reference of the parent class object is passed to the child class.
+2.	We can perform Upcasting implicitly or explicitly.	                            Implicitly Downcasting is not possible.
+3.	In the child class, we can access the methods and variables of the parent class.	The methods and variables of both the      classes(parent and child) can be accessed.
+4.	We can access some specified methods of the child class.	                     All the methods and variables of both classes can be accessed by performing downcasting.
+5.	Parent p = new Parent()                                                            Parent p = new Child() Child c = (Child)p;
+
+The abstract keyword is a non-access modifier, used for classes and methods. Class: An abstract class is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class). Method: An abstract method can only be used in an abstract class, and it does not have a body.
+Abstract class can have nrml methods also not compulsory to have abstract methods.
+can't create an obj of abstract class.. if we want to create a subclass which implements all the methods i.e concrete class 
+static can be used for inner class not outer class
+Java inner class or nested class is a class that is declared inside the class or interface.
+An Interface in Java programming language is defined as an abstract type used to specify the behavior of a class. An interface in Java is a blueprint of a behavior. A Java interface contains static constants and abstract methods.
+The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not the method body. It is used to achieve abstraction and multiple inheritances in Java using Interface.
+A class can extend another class similar to this an interface can extend another interface. But only a class can extend to another interface, and vice-versa is not allowed. To implement an interface, we use the keyword implements.
+one class can implement multiple intefaces, but in abstract class we can only extend one class.
+class-class-->extends
+class-interface-->implements
+interface-interface-->extends
+we can't extend enum. An enum is a special "class" that represents a group of constants (unchangeable variables, like final variables).
+To create an enum, use the enum keyword (instead of class or interface), and separate the constants with a comma. Note that they should be in uppercase letters
+Enum is short for "enumerations", which means "specifically listed". An enum cannot be used to create objects, and it cannot extend other classes (but it can implement interfaces).
+The Enum in Java is a data type which contains a fixed set of constants.
+Annotations in Java provide additional information to the compiler and JVM. An annotation is a tag representing metadata about classes, interfaces, variables, methods, or fields. Annotations do not impact the execution of the code that they annotate.
+A functional interface is an interface that contains only one abstract method. They can have only one functionality to exhibit. From Java 8 onwards, lambda expressions can be used to represent the instance of a functional interface. A functional interface can have any number of default methods. Runnable, ActionListener, and Comparable are some of the examples of functional interfaces. 
+
+Functional Interface is additionally recognized as Single Abstract Method Interfaces. In short, they are also known as SAM interfaces. Functional interfaces in Java are the new feature that provides users with the approach of fundamental programming. 
+Lambda Expressions were added in Java 8.
+
+A lambda expression is a short block of code which takes in parameters and returns a value. Lambda expressions are similar to methods, but they do not need a name and they can be implemented right in the body of a method.
+
+The simplest lambda expression contains a single parameter and an expression:
+
+parameter -> expression
+parameter1, parameter2) -> expression
+(parameter1, parameter2) -> { code block }
+types of interfaces-->normal interface, functional/SAM(single abstract method) interface, marker interface
+interface with two or more methods are normal interfaces
+interface which has no methods is called marker interface(blank interface)
+interface which has only one abstract method is called functional/SAM interface
+Examples of Functional Interfaces:
+Runnable : It contains only  run()  method
+ActionListener : It contains only  actionPerformed()
+ItemListener : It contains only  itemStateChanged() method
+An interface that does not contain any methods, fields, Abstract Methods, and any Constants is Called a Marker interface.
+Also, if an interface is empty, then it is known as Marker Interface.
+The Serializable and the Cloneable interfaces are examples of Marker interfaces.
+Serialization is a mechanism in which our object state is ready from memory and written into a file or from the databases.
+Deserialization- is the opposite of serialization means that object state reading from a file or database and written back into memory is called deserialization of an object.
+Serialization – Converting an object into byte stream.
+
+Deserialization – Converting byte stream into an object.
+an exception in Java is “an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.”
+errors-complie time(syntax errors), run time(code is working but execution stops in between or exceptions), logical errror(bugs)
+The Java throw keyword is used to throw an exception explicitly.
+In Java, we can create our own exceptions that are derived classes of the Exception class. Creating our own Exception is known as custom exception or user-defined exception. Basically, Java custom exceptions are used to customize the exception according to user need.
+throws--Used to indicate what exception type may be thrown by a method
+The Java throws keyword is used to declare an exception. It gives an information to the programmer that there may occur an exception. So, it is better for the programmer to provide the exception handling code so that the normal flow of the program can be maintained.
+
+Exception Handling is mainly used to handle the checked exceptions. If there occurs any unchecked exception such as NullPointerException, it is programmers' fault that he is not checking the code before it being used.
+Syntax of Java throws
+return_type method_name() throws exception_class_name{  
+//method code  
+}  
+Which exception should be declared?
+Ans: Checked exception only, because:
+unchecked exception: under our control so we can correct our code.
+error: beyond our control. For example, we are unable to do anything if there occurs VirtualMachineError or StackOverflowError.
+
+Scanner breaks its input into tokens using a Delimiter pattern. BufferedReader simply reads the sequence of characters in a portion that depends on the buffer size. The scanner has a little buffer(1KB byte buffer). The scanner is slow as it does the parsing of input data.
+Threads allows a program to operate more efficiently by doing multiple things at the same time.
+
+Threads can be used to perform complicated tasks in the background without interrupting the main program.
+There are two ways to create a thread.
+
+It can be created by extending the Thread class and overriding its run() method
+Another way to create a thread is to implement the Runnable interface
+If the class extends the Thread class, the thread can be run by creating an instance of the class and call its start() method
+If the class implements the Runnable interface, the thread can be run by passing an instance of the class to a Thread object's constructor and then calling the thread's start() method
+Differences between "extending" and "implementing" Threads
+
+The major difference is that when a class extends the Thread class, you cannot extend any other class, but by implementing the Runnable interface, it is possible to extend from another class as well, like: class MyClass extends OtherClass implements Runnable.
+Multithreading in Java is a process of executing multiple threads simultaneously.
+
+A thread is a lightweight sub-process, the smallest unit of processing. Multiprocessing and multithreading, both are used to achieve multitasking.Java Multithreading is mostly used in games, animation, etc.
+A thread is a lightweight subprocess, the smallest unit of processing. It is a separate path of execution.
+
+Threads are independent. If there occurs exception in one thread, it doesn't affect other threads. It uses a shared memory area.
+Java provides Thread class to achieve thread programming. Thread class provides constructors and methods to create and perform operations on a thread. Thread class extends Object class and implements Runnable interface.
+Each thread has a priority. Priorities are represented by a number between 1 and 10.
+Priorities in threads is a concept where each thread is having a priority which in layman’s language one can say every object is having priority here which is represented by numbers ranging from 1 to 10. 
+
+The default priority is set to 5 as excepted.
+Minimum priority is set to 1.
+Maximum priority is set to 10.
+When we extend Thread class, we can’t extend any other class even we require and When we implement Runnable, we can save a space for our class to extend any other class in future or now.
+When we extend Thread class, each of our thread creates unique object and associate with it. When we implements Runnable, it shares the same object to multiple threads.
+
+A race condition in Java emerges when two or more threads concurrently access shared data, and the final outcome hinges on the timing or order of their execution. This can result in unpredictable behavior and elusive bugs, posing challenges during reproduction and debugging.
+A condition in which the critical section (a part of the program where shared memory is accessed) is concurrently executed by two or more threads. It leads to incorrect behavior of a program.
+
+In layman terms, a race condition can be defined as, a condition in which two or more threads compete together to get certain shared resources.
+
+For example, if thread A is reading data from the linked list and another thread B is trying to delete the same data. This process leads to a race condition that may result in run time error.
+NEW – a newly created thread that has not yet started the execution
+RUNNABLE – either running or ready for execution but it’s waiting for resource allocation
+BLOCKED – waiting to acquire a monitor lock to enter or re-enter a synchronized block/method
+WAITING – waiting for some other thread to perform a particular action without any time limit
+TIMED_WAITING – waiting for some other thread to perform a specific action for a specified period
+TERMINATED – has completed its execution
+ sleep() Method
+This method causes the currently executing thread to sleep for the specified number of milliseconds, subject to the precision and accuracy of system timers and schedulers.
+join() Method
+The join() method of a Thread instance is used to join the start of a thread’s execution to the end of another thread’s execution such that a thread does not start running until another thread ends. If join() is called on a Thread instance, the currently running thread will block until the Thread instance has finished executing. The join() method waits at most this many milliseconds for this thread to die. A timeout of 0 means to wait forever 
+The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
+
+Java Collections can achieve all the operations that you perform on a data such as searching, sorting, insertion, manipulation, and deletion.
+
+Java Collection means a single unit of objects. Java Collection framework provides many interfaces (Set, List, Queue, Deque) and classes (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+A Collection represents a single unit of objects, i.e., a group.
+
+Java ArrayList class uses a dynamic array for storing the elements. It is like an array, but there is no size limit. We can add or remove elements anytime. So, it is much more flexible than the traditional array. It is found in the java.util package. It is like the Vector in C++.
+
+The ArrayList in Java can have the duplicate elements also. It implements the List interface so we can use all the methods of the List interface here. The ArrayList maintains the insertion order internally.
+
+It inherits the AbstractList class and implements List interface.
+        // Creating a List
+        List<String> al = new ArrayList<>();
+        
+The Java Map interface, java.util.Map represents a mapping between a key and a value. More specifically, a Java Map can store pairs of keys and values. Each key is linked to a specific value. Once stored in a Map, you can later look up the value using just the key. 
+// Creating object for Map.
+        Map<Integer, String> map
+            = new HashMap<Integer, String>();
+The Set follows the unordered way and it found in java.util package and extends the collection interface in java. Duplicate item will be ignored in Set and it will not print in the final output. 
+// Set demonstration using HashSet
+        Set<String> Set = new HashSet<String>();
+Comparable in Java is an object to compare itself with another object, whereas Comparator is an object for comparing different objects of different classes.
+Comparable provides the compareTo() method to sort elements in Java, whereas Comparator provides compare() method to sort elements in Java.
+Comparator in Java is an object for comparing different objects of different classes. Comparator interface in Java is also used to arrange the objects of user-defined classes. It includes two important comparator interface methods known as compare (Object obj1, Object obj2) and equals (Object element).
+Advantages of Stream API:
+Stream conveys elements from a source, such as a data structure, an array, a generator function, or an I/O channel, through a pipeline of computational operations. It's functional in nature, and an operation on a stream produces a result but doesn't modify its source.1
+The forEach() method of ArrayList used to perform the certain operation for each element in ArrayList. This method traverses each element of the Iterable of ArrayList until all elements have been Processed by the method or an exception is raised. public void forEach(Consumer<? super E> action)
+A stream in Java is a sequence of objects that supports various methods which can be pipelined to produce the desired result. There uses of Stream in Java are mentioned below:
+
+Stream API is a way to express and process collections of objects.
+Enable us to perform operations like filtering, mapping,reducing and sorting. Stream<T> stream; Here T is either a class, object, or data type depending upon the declaration.
+Access Specifier:- This can be understood as the access you provide to your code in Java whether other classes can access your code or not.
+
+E.g. public, private, protected and default.
+
+Access Modifier:- Java provides both Access Specifier and Access Modifiers for creating access to your Java code for other classes. Here modifier is also used to do the same task but there are limitations.
+
+Class Modifier:
+abstract :- This defines the restriction such that objects cannot be created.
+final:- This restricts a class from being inherited.
+strictfp:- it is related to the checking of floating point values irrespective of OS.
+Variable Modifier:
+static:no object creation required
+final: cannot be reassigned
+transient: it is not serialized
+volatile: the values are liable for change
+
+Modifier	   Class    Package Subclass World
+public	             Y 	Y	Y	Y
+protected	     Y	        Y	Y	N
+default	     Y	        Y	N	N
+private	     Y	        N	N	N
+
+
+- New State   
+- Runnable State  ->  start() method
+- Running State     -> a thead is running with run() method 
+- Waiting State	    -> sleep(),  wait() method
+- Dead State
+
+Through notify(), you will go to waiting state to runnable state.
+From Running, Runnable state to dead state through stop() method.
+
+The printStackTrace() method in Java is a tool used to handle exceptions and errors. It is a method of Java's throwable class which prints the throwable along with other details like the line number and class name where the exception occurred. The printStackTrace() is very useful in diagnosing exceptions.
+
+
+JVM (Java Virtual Machine) is an abstract machine. It is called a virtual machine because it doesn't physically exist. It is a specification that provides a runtime environment in which Java bytecode can be executed. It can also run those programs which are written in other languages and compiled to Java bytecode.
+
+JRE is an acronym for Java Runtime Environment. It is also written as Java RTE. The Java Runtime Environment is a set of software tools which are used for developing Java applications. It is used to provide the runtime environment. It is the implementation of JVM. It physically exists. It contains a set of libraries + other files that JVM uses at runtime.
+
+JDK is an acronym for Java Development Kit. The Java Development Kit (JDK) is a software development environment which is used to develop Java applications and applets. It physically exists. It contains JRE + development tools.
+
+JDK is an implementation of any one of the below given Java Platforms released by Oracle Corporation:
+
+Standard Edition Java Platform
+Enterprise Edition Java Platform
+Micro Edition Java Platform
+
+https://kpitc-my.sharepoint.com/:x:/g/personal/anjanir_kpit_com/EcukzBnslxZIne5ngZtUU24BsaI9tT6GXhn4KL5mKq7ZQw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Basic Java Concepts:
+•	First code in java
+•	How Java Works
+•	Variables in java
+•	Data types in java
+•	Literal
+•	Type conversion
+•	Assignment Operators
+•	Relational Operators
+•	Logical Operators
+Control Flow:
+•	If Else
+•	If Else if
+•	Ternary
+•	Switch Statement
+Loops:
+•	Need For Loop
+•	While Loop
+•	Do While Loop
+•	For Loop
+•	Which Loop To Use
+Classes and Objects:
+•	Class And Object Theory
+•	Class and Object Practical
+•	JDK JRE JVM
+•	Methods
+•	Method Overloading
+•	Stack And Heap
+Arrays:
+•	Need of an Array
+•	Creation of Array
+•	Multi Dimensional Array
+•	Jagged and 3D Array
+•	Drawbacks of Array
+•	Array of Objects
+•	Enhanced for loop
+Strings:
+•	What is String
+•	Mutable vs Immutable string
+•	StringBuffer and StringBuilder
+Static Members:
+•	Static variable
+•	Static block
+•	Static method
+Object-Oriented Programming (OOP) Concepts:
+•	Encapsulation
+•	Getters and setters
+•	this keyword
+•	Constructor
+•	Default vs Parameterized Constructor
+•	this and super method
+•	Naming Convention
+•	Anonymous Object
+Inheritance:
+•	Need of Inheritance
+•	What is Inheritance
+•	Single and Multilevel Inheritance
+•	Multiple Inheritance
+•	Method Overriding
+Packages and Access Modifiers:
+•	Packages
+•	Access Modifiers
+Polymorphism:
+•	Polymorphism
+•	Dynamic Method Dispatch
+•	Final keyword
+•	Object Class equals toString hashcode
+•	Upcasting and Downcasting
+•	Abstract keyword
+Inner Classes:
+•	Inner class
+•	Anonymous Inner class
+•	Abstract and Anonymous Inner class
+Interfaces:
+•	What is Interface
+•	More on Interfaces
+•	Need of Interface
+Enum and Annotations:
+•	What is Enum
+•	Enum if and switch
+•	Enum Class
+•	What is Annotation
+•	Functional Interface
+•	Lambda Expression
+•	Lambda Expression with return
+•	Types of Interface
+Exception Handling:
+•	What is Exception
+•	Exception Handling using try-catch
+•	Try with multiple catch
+•	Exception Hierarchy
+•	Exception throw keyword
+•	Custom Exception
+•	Handling Exceptions using throws
+•	User Input using BufferedReader and Scanner
+•	Try with resources
+Multithreading:
+•	Threads
+•	Multiple Threads
+•	Thread Priority and Sleep
+•	Runnable vs Thread
+•	Race Condition
+•	Thread states
+Collections:
+•	Collection API
+•	ArrayList
+•	Set
+•	Map
+
+
+
+
+
+

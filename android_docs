@@ -1,0 +1,739 @@
+ANDROID
+
+Android is an open source and Linux-based operating system for mobile devices such as smartphones and tablet computers. Android was developed by the Open Handset Alliance, led by Google, and other companies.
+Features of Android
+Android is a powerful operating system competing with Apple 4GS and supports great features. Few of them are listed below −
+
+Sr.No.	Feature & Description
+1	
+Beautiful UI
+
+Android OS basic screen provides a beautiful and intuitive user interface.
+
+2	
+Connectivity
+
+GSM/EDGE, IDEN, CDMA, EV-DO, UMTS, Bluetooth, Wi-Fi, LTE, NFC and WiMAX.
+
+3	
+Storage
+
+SQLite, a lightweight relational database, is used for data storage purposes.
+
+4	
+Media support
+
+H.263, H.264, MPEG-4 SP, AMR, AMR-WB, AAC, HE-AAC, AAC 5.1, MP3, MIDI, Ogg Vorbis, WAV, JPEG, PNG, GIF, and BMP.
+
+5	
+Messaging
+
+SMS and MMS
+
+6	
+Web browser
+
+Based on the open-source WebKit layout engine, coupled with Chrome's V8 JavaScript engine supporting HTML5 and CSS3.
+
+7	
+Multi-touch
+
+Android has native support for multi-touch which was initially made available in handsets such as the HTC Hero.
+
+8	
+Multi-tasking
+
+User can jump from one task to another and same time various application can run simultaneously.
+
+9	
+Resizable widgets
+
+Widgets are resizable, so users can expand them to show more content or shrink them to save space.
+
+10	
+Multi-Language
+
+Supports single direction and bi-directional text.
+
+11	
+GCM
+
+Google Cloud Messaging (GCM) is a service that lets developers send short message data to their users on Android devices, without needing a proprietary sync solution.
+
+12	
+Wi-Fi Direct
+
+A technology that lets apps discover and pair directly, over a high-bandwidth peer-to-peer connection.
+
+13	
+Android Beam
+
+A popular NFC-based technology that lets users instantly share, just by touching two NFC-enabled phones together.
+
+Android - Application Components
+1	
+Activities
+
+They dictate the UI and handle the user interaction to the smart phone screen.
+
+2	
+Services
+
+They handle background processing associated with an application.
+
+3	
+Broadcast Receivers
+
+They handle communication between Android OS and applications.
+
+4	
+Content Providers
+
+They handle data and database management issues.
+Additional Components
+There are additional components which will be used in the construction of above mentioned entities, their logic, and wiring between them. These components are −
+
+S.No	Components & Description
+1	
+Fragments
+
+Represents a portion of user interface in an Activity.
+
+2	
+Views
+
+UI elements that are drawn on-screen including buttons, lists forms etc.
+
+3	
+Layouts
+
+View hierarchies that control screen format and appearance of the views.
+
+4	
+Intents
+
+Messages wiring components together.
+
+5	
+Resources
+
+External elements, such as strings, constants and drawable pictures.
+
+6	
+Manifest
+
+Configuration file for the application.
+
+The main components of android architecture are following:-
+
+Applications
+Application Framework
+Android Runtime
+Platform Libraries
+Linux Kernel
+
+Applications –
+Applications is the top layer of android architecture. The pre-installed applications like home, contacts, camera, gallery etc and third party applications downloaded from the play store like chat applications, games etc. will be installed on this layer only.
+It runs within the Android run time with the help of the classes and services provided by the application framework.
+
+Application framework –
+Application Framework provides several important classes which are used to create an Android application. It provides a generic abstraction for hardware access and also helps in managing the user interface with application resources. Generally, it provides the services with the help of which we can create a particular class and make that class helpful for the Applications creation.
+
+It includes different types of services activity manager, notification manager, view system, package manager etc. which are helpful for the development of our application according to the prerequisite.
+
+Application runtime –
+Android Runtime environment is one of the most important part of Android. It contains components like core libraries and the Dalvik virtual machine(DVM). Mainly, it provides the base for the application framework and powers our application with the help of the core libraries.
+
+Like Java Virtual Machine (JVM), Dalvik Virtual Machine (DVM) is a register-based virtual machine and specially designed and optimized for android to ensure that a device can run multiple instances efficiently. It depends on the layer Linux kernel for threading and low-level memory management. The core libraries enable us to implement android applications using the standard JAVA or Kotlin programming languages.
+
+Platform libraries –
+The Platform Libraries includes various C/C++ core libraries and Java based libraries such as Media, Graphics, Surface Manager, OpenGL etc. to provide a support for android development.
+
+Media library provides support to play and record an audio and video formats.
+Surface manager responsible for managing access to the display subsystem.
+SGL and OpenGL both cross-language, cross-platform application program interface (API) are used for 2D and 3D computer graphics.
+SQLite provides database support and FreeType provides font support.
+Web-Kit This open source web browser engine provides all the functionality to display web content and to simplify page loading.
+SSL (Secure Sockets Layer) is security technology to establish an encrypted link between a web server and a web browser.
+Linux Kernel –
+Linux Kernel is heart of the android architecture. It manages all the available drivers such as display drivers, camera drivers, Bluetooth drivers, audio drivers, memory drivers, etc. which are required during the runtime.
+
+The Linux Kernel will provide an abstraction layer between the device hardware and the other components of android architecture. It is responsible for management of memory, power, devices etc.
+
+The features of Linux kernel are:
+
+Security: The Linux kernel handles the security between the application and the system.
+Memory Management: It efficiently handles the memory management thereby providing the freedom to develop our apps.
+Process Management: It manages the process well, allocates resources to processes whenever they need them.
+Network Stack: It effectively handles the network communication.
+Driver Model: It ensures that the application works properly on the device and hardware manufacturers responsible for building their drivers into the Linux build.
+
+Here is the list of activities:
+
+No Activity
+Basic Activity
+Bottom Navigation Activity
+Empty Activity
+Fullscreen Activity
+Google Admob Ads Activity
+Google Maps Activity
+Login Activity
+Master/Detail Flow
+Navigation Drawer Activity
+Settings Activity
+Scrolling Activity
+Tabbed Activity
+Fragment + ViewModel
+Native C++
+
+Android Project folder Structure
+Manifests Folder
+Java Folder
+res (Resources) Folder
+Drawable Folder
+Layout Folder
+Mipmap Folder
+Values Folder
+Gradle Scripts
+Manifests folder contains AndroidManifest.xml for creating our android application. This file contains information about our application such as the Android version, metadata, states package for Kotlin file, and other application components. It acts as an intermediator between android OS and our application.
+The Java folder contains all the java and Kotlin source code (.java) files that we create during the app development, including other Test files.
+The resource folder is the most important folder because it contains all the non-code sources like images, XML layouts, and UI strings for our android application. 
+res/drawable folder
+It contains the different types of images used for the development of the application. We need to add all the images in a drawable folder for the application development.res/mipmap folder
+This folder contains launcher.xml files to define icons that are used to show on the home screen. It contains different density types of icons depending upon the size of the device such as hdpi, mdpi, xhdpi.
+ 
+
+res/values folder
+Values folder contains a number of XML files like strings, dimensions, colors, and style definitions. One of the most important files is the strings.xml file which contains the resources. 
+res/layout folder
+The layout folder contains all XML layout files which we used to define the user interface of our application. It contains the activity_main.xml file.
+Gradle Scripts folder
+Gradle means automated build system and it contains a number of files that are used to define a build configuration that can be applied to all modules in our application. In build.gradle (Project) there are buildscripts and in build.gradle (Module) plugins and implementations are used to build configurations that can be applied to all our application modules.
+1	
+anim/
+
+XML files that define property animations. They are saved in res/anim/ folder and accessed from the R.anim class.
+
+2	
+color/
+
+XML files that define a state list of colors. They are saved in res/color/ and accessed from the R.color class.
+
+3	
+drawable/
+
+Image files like .png, .jpg, .gif or XML files that are compiled into bitmaps, state lists, shapes, animation drawable. They are saved in res/drawable/ and accessed from the R.drawable class.
+
+4	
+layout/
+
+XML files that define a user interface layout. They are saved in res/layout/ and accessed from the R.layout class.
+
+5	
+menu/
+
+XML files that define application menus, such as an Options Menu, Context Menu, or Sub Menu. They are saved in res/menu/ and accessed from the R.menu class.
+
+6	
+raw/
+
+Arbitrary files to save in their raw form. You need to call Resources.openRawResource() with the resource ID, which is R.raw.filename to open such raw files.
+
+7	
+values/
+
+XML files that contain simple values, such as strings, integers, and colors. For example, here are some filename conventions for resources you can create in this directory −
+
+arrays.xml for resource arrays, and accessed from the R.array class.
+
+integers.xml for resource integers, and accessed from the R.integer class.
+
+bools.xml for resource boolean, and accessed from the R.bool class.
+
+colors.xml for color values, and accessed from the R.color class.
+
+dimens.xml for dimension values, and accessed from the R.dimen class.
+
+strings.xml for string values, and accessed from the R.string class.
+
+styles.xml for styles, and accessed from the R.style class.
+
+8	
+xml/
+
+Arbitrary XML files that can be read at runtime by calling Resources.getXML(). You can save various configuration files here which will be used at run time.
+An activity represents a single screen with a user interface just like window or frame of Java.Android activity is the subclass of ContextThemeWrapper class.
+1	
+onCreate()
+
+This is the first callback and called when the activity is first created.
+
+2	
+onStart()
+
+This callback is called when the activity becomes visible to the user.
+
+3	
+onResume()
+
+This is called when the user starts interacting with the application.
+
+4	
+onPause()
+
+The paused activity does not receive user input and cannot execute any code and called when the current activity is being paused and the previous activity is being resumed.
+
+5	
+onStop()
+
+This callback is called when the activity is no longer visible.
+
+6	
+onDestroy()
+
+This callback is called before the activity is destroyed by the system.
+
+7	
+onRestart()
+
+This callback is called when the activity restarts after stopping it.
+A service is a component that runs in the background to perform long-running operations without needing to interact with the user and it works even if application is destroyed. A service can essentially take two states −
+1	
+Started
+
+A service is started when an application component, such as an activity, starts it by calling startService(). Once started, a service can run in the background indefinitely, even if the component that started it is destroyed.
+
+2	
+Bound
+
+A service is bound when an application component binds to it by calling bindService(). A bound service offers a client-server interface that allows components to interact with the service, send requests, get results, and even do so across processes with interprocess communication (IPC).
+1	
+onStartCommand()
+
+The system calls this method when another component, such as an activity, requests that the service be started, by calling startService(). If you implement this method, it is your responsibility to stop the service when its work is done, by calling stopSelf() or stopService() methods.
+
+2	
+onBind()
+
+The system calls this method when another component wants to bind with the service by calling bindService(). If you implement this method, you must provide an interface that clients use to communicate with the service, by returning an IBinder object. You must always implement this method, but if you don't want to allow binding, then you should return null.
+
+3	
+onUnbind()
+
+The system calls this method when all clients have disconnected from a particular interface published by the service.
+
+4	
+onRebind()
+
+The system calls this method when new clients have connected to the service, after it had previously been notified that all had disconnected in its onUnbind(Intent).
+
+5	
+onCreate()
+
+The system calls this method when the service is first created using onStartCommand() or onBind(). This call is required to perform one-time set-up.
+
+6	
+onDestroy()
+
+The system calls this method when the service is no longer used and is being destroyed. Your service should implement this to clean up any resources such as threads, registered listeners, receivers, etc.
+Broadcast Receivers simply respond to broadcast messages from other applications or from the system itself. These messages are sometime called events or intents. For example, applications can also initiate broadcasts to let other applications know that some data has been downloaded to the device and is available for them to use, so this is broadcast receiver who will intercept this communication and will initiate appropriate action.
+
+There are following two important steps to make BroadcastReceiver works for the system broadcasted intents −
+
+Creating the Broadcast Receiver.
+
+Registering Broadcast Receiver
+android.intent.action.BATTERY_LOW
+
+Indicates low battery condition on the device.
+A content provider component supplies data from one application to others on request. Such requests are handled by the methods of the ContentResolver class. A content provider can use different ways to store its data and the data can be stored in a database, in files, or even over a network.
+sometimes it is required to share data across applications. This is where content providers become very useful.
+Content providers let you centralize content in one place and have many different applications access it as needed. A content provider behaves very much like a database where you can query it, edit its content, as well as add or delete content using insert(), update(), delete(), and query() methods. In most cases this data is stored in an SQlite database.
+
+Content URIs
+To query a content provider, you specify the query string in the form of a URI which has following format −
+
+<prefix>://<authority>/<data_type>/<id>
+Here is the detail of various parts of the URI −
+
+Sr.No	Part & Description
+1	
+prefix
+
+This is always set to content://
+
+2	
+authority
+
+This specifies the name of the content provider, for example contacts, browser etc. For third-party content providers, this could be the fully qualified name, such as com.tutorialspoint.statusprovider
+
+3	
+data_type
+
+This indicates the type of data that this particular provider provides. For example, if you are getting all the contacts from the Contacts content provider, then the data path would be people and URI would look like thiscontent://contacts/people
+
+4	
+id
+
+This specifies the specific record requested. For example, if you are looking for contact number 5 in the Contacts content provider then URI would look like this content://contacts/people/5.
+onCreate() This method is called when the provider is started.
+
+query() This method receives a request from a client. The result is returned as a Cursor object.
+
+insert()This method inserts a new record into the content provider.
+
+delete() This method deletes an existing record from the content provider.
+
+update() This method updates an existing record from the content provider.
+
+getType() This method returns the MIME type of the data at the given URI.
+
+
+Creating a Content Provider
+Following are the steps which are essential to follow in order to create a Content Provider:
+
+Create a class in the same directory where the that MainActivity file resides and this class must extend the ContentProvider base class.
+To access the content, define a content provider URI address.
+Create a database to store the application data.
+Implement the six abstract methods of ContentProvider class.
+Register the content provider in AndroidManifest.xml file using <provider> tag.
+
+Whenever the intent filter condition is match the android OS will launch that activity. An intent is an object that can hold the os or other app activity and its data in uri form.It is started using startActivity(intent-obj).. \n whereas IntentFilter can fetch activity information on os or other app activities.
+In Android, it is quite usual for users to witness a jump from one application to another as a part of the whole process, for example, searching for a location on the browser and witnessing a direct jump into Google Maps or receiving payment links in Messages Application (SMS) and on clicking jumping to PayPal or GPay (Google Pay). This process of taking users from one application to another is achieved by passing the Intent to the system. Intents, in general, are used for navigating among various activities within the same application, but note, is not limited to one single application, i.e., they can be utilized from moving from one application to another as well. 
+Context.startActivity()	This is to launch a new activity or get an existing activity to be action.
+Context.startService()	This is to start a new service or deliver instructions for an existing service.
+Context.sendBroadcast()	This is to deliver the message to broadcast receivers.
+Implicit Intent doesn’t specify the component. In such a case, intent provides information on available components provided by the system that is to be invoked. For example, you may write the following code to view the webpage.
+
+Syntax:
+
+Intent intent=new Intent(Intent.ACTION_VIEW);
+intent.setData(Uri.parse("https://www.geeksforgeeks.org/"));
+startActivity(intent);
+For Example: In the below images, no component is specified, instead, an action is performed i.e. a webpage is going to be opened. As you type the name of your desired webpage and click on the ‘CLICK’ button. Your webpage is opened. 
+Explicit Intent specifies the component. In such a case, intent provides the external class to be invoked.
+
+Syntax:
+
+Intent i = new Intent(getApplicationContext(), ActivityTwo.class);  
+startActivity(i);  
+For Example: In the below example, there are two activities (FirstActivity, and SecondActivity). When you click on the ‘GO TO OTHER ACTIVITY’ Button in the FirstActivity, then you move to the SecondActivity. When you click on the ‘GO TO HOME ACTIVITY’ button in the SecondActivity, then you move to the first activity. This is getting done through Explicit Intent.
+Android intents are mainly used to:
+
+Start the service
+Launch an activity
+Display a web page
+Display a list of contacts
+Broadcast a message
+Dial a phone call etc.
+
+A Fragment is a piece of an activity which enable more modular activity design. It will not be wrong if we say, a fragment is a kind of sub-activity.
+A fragment has its own layout and its own behaviour with its own life cycle callbacks.
+
+You can add or remove fragments in an activity while the activity is running.
+
+You can combine multiple fragments in a single activity to build a multi-pane UI.
+
+A fragment can be used in multiple activities.
+
+Fragment life cycle is closely related to the life cycle of its host activity which means when the activity is paused, all the fragments available in the activity will also be stopped.
+
+A fragment can implement a behaviour that has no user interface component.
+
+Fragments were added to the Android API in Honeycomb version of Android which API version 11.
+onAttach()The fragment instance is associated with an activity instance.The fragment and the activity is not fully initialized. Typically you get in this method a reference to the activity which uses the fragment for further initialization work.
+
+onCreate() The system calls this method when creating the fragment. You should initialize essential components of the fragment that you want to retain when the fragment is paused or stopped, then resumed.
+
+onCreateView() The system calls this callback when it's time for the fragment to draw its user interface for the first time. To draw a UI for your fragment, you must return a View component from this method that is the root of your fragment's layout. You can return null if the fragment does not provide a UI.
+
+onActivityCreated()The onActivityCreated() is called after the onCreateView() method when the host activity is created. Activity and fragment instance have been created as well as the view hierarchy of the activity. At this point, view can be accessed with the findViewById() method. example. In this method you can instantiate objects which require a Context object
+
+onStart()The onStart() method is called once the fragment gets visible.
+
+onResume()Fragment becomes active.
+
+onPause() The system calls this method as the first indication that the user is leaving the fragment. This is usually where you should commit any changes that should be persisted beyond the current user session.
+
+onStop()Fragment going to be stopped by calling onStop()
+
+onDestroyView()Fragment view will destroy after call this method
+
+onDestroy()onDestroy() called to do final clean up of the fragment's state but Not guaranteed to be called by the Android platform.
+Types of Fragments
+Basically fragments are divided as three stages as shown below.
+
+Single frame fragments − Single frame fragments are using for hand hold devices like mobiles, here we can show only one fragment as a view.
+
+List fragments − fragments having special list view is called as list fragment
+
+Fragments transaction − Using with fragment transaction. we can move one fragment to another fragment.
+The intent itself, an Intent object, is a passive data structure holding an abstract description of an operation to be performed.
+Intent Filter
+Implicit intent uses the intent filter to serve the user request.
+The intent filter specifies the types of intents that an activity, service, or broadcast receiver can respond.
+Intent filters are declared in the Android manifest file.
+Intent filter must contain <action>
+Most of the intent filter are describe by its 
+
+<action>, 
+<category> and
+<data>.
+Examples of common action:
+
+ACTION_VIEW: Use this action in intent with startActivity() when you have some information that activity can show to the user like showing an image in a gallery app or  an address to view in a map app
+ACTION_SEND: You should use this in intent with startActivity() when you have some data that the user can share through another app, such as an email app or social sharing app.
+Example of common categories:
+
+CATEGORY_BROWSABLE: The target activity allows itself to be started by a web browser to display data referenced by a link.
+<data> --- Adds a data specification to an intent filter. The specification can be just a data type, just a URI, or both a data type and a URI.
+
+Android Layout is used to define the user interface that holds the UI controls or widgets that will appear on the screen of an android application or activity screen.Generally, every application is a combination of View and ViewGroup.
+A View is defined as the user interface which is used to create interactive UI components such as TextView, ImageView, EditText, RadioButton, etc., and is responsible for event handling and drawing. They are Generally Called Widgets.
+A ViewGroup act as a base class for layouts and layouts parameters that hold other Views or ViewGroups and to define the layout properties. They are Generally Called layouts.
+Types of Android Layout
+Android Linear Layout: LinearLayout is a ViewGroup subclass, used to provide child View elements one by one either in a particular direction either horizontally or vertically based on the orientation property.
+Android Relative Layout: RelativeLayout is a ViewGroup subclass, used to specify the position of child View elements relative to each other like (A to the right of B) or relative to the parent (fix to the top of the parent).
+Android Constraint Layout: ConstraintLayout is a ViewGroup subclass, used to specify the position of layout constraints for every child View relative to other views present. A ConstraintLayout is similar to a RelativeLayout, but having more power.
+Android Frame Layout: FrameLayout is a ViewGroup subclass, used to specify the position of View elements it contains on the top of each other to display only a single View inside the FrameLayout.
+Android Table Layout: TableLayout is a ViewGroup subclass, used to display the child View elements in rows and columns.
+Android Web View: WebView is a browser that is used to display the web pages in our activity layout.
+Android ListView: ListView is a ViewGroup, used to display scrollable lists of items in a single column.
+Android Grid View: GridView is a ViewGroup that is used to display a scrollable list of items in a grid view of rows and columns.
+Absolute Layout
+AbsoluteLayout enables you to specify the exact location of its children.
+When we have created the layout, we need to load the XML layout resource from our activity onCreate() callback method and access the UI element from the XML using findViewById. 
+setContentView(R.layout.activity_main)
+// finding the button
+        val showButton = findViewById<Button>(R.id.showInput)
+        
+android:layout_width=wrap_content tells your view to size itself to the dimensions required by its content.
+
+android:layout_width=fill_parent tells your view to become as big as its parent view.
+A View is an object that draws something on the screen that the user can interact with and a ViewGroup is an object that holds other View (and ViewGroup) objects in order to define the layout of the user interface.
+
+Android UI Controls
+There are number of UI controls provided by Android that allow you to build the graphical user interface for your app.
+
+Sr.No.	UI Control & Description
+1	TextView
+This control is used to display text to the user.
+
+2	EditText
+EditText is a predefined subclass of TextView that includes rich editing capabilities.
+
+3	AutoCompleteTextView
+The AutoCompleteTextView is a view that is similar to EditText, except that it shows a list of completion suggestions automatically while the user is typing.
+
+4	Button
+A push-button that can be pressed, or clicked, by the user to perform an action.
+
+5	ImageButton
+An ImageButton is an AbsoluteLayout which enables you to specify the exact location of its children. This shows a button with an image (instead of text) that can be pressed or clicked by the user.
+
+6	CheckBox
+An on/off switch that can be toggled by the user. You should use check box when presenting users with a group of selectable options that are not mutually exclusive.
+
+7	ToggleButton
+An on/off button with a light indicator.
+
+8	RadioButton
+The RadioButton has two states: either checked or unchecked.
+
+9	RadioGroup
+A RadioGroup is used to group together one or more RadioButtons.
+
+10	ProgressBar
+The ProgressBar view provides visual feedback about some ongoing tasks, such as when you are performing a task in the background.
+
+11	Spinner
+A drop-down list that allows users to select one value from a set.
+
+12	TimePicker
+The TimePicker view enables users to select a time of the day, in either 24-hour mode or AM/PM mode.
+
+13	DatePicker
+The DatePicker view enables users to select a date of the day.
+Events are a useful way to collect data about a user's interaction with interactive components of Applications. Like button presses or screen touch etc. The Android framework maintains an event queue as first-in, first-out (FIFO) basis. You can capture these events in your program and take appropriate action as per requirements.
+Event Listeners − An event listener is an interface in the View class that contains a single callback method. These methods will be called by the Android framework when the View to which the listener has been registered is triggered by user interaction with the item in the UI.
+
+Event Listeners Registration − Event Registration is the process by which an Event Handler gets registered with an Event Listener so that the handler is called when the Event Listener fires the event.
+
+Event Handlers − When an event happens and we have registered an event listener for the event, the event listener calls the Event Handlers, which is the method that actually handles the event.
+Events are the actions performed by the user in order to interact with the application, for e.g. pressing a button or touching the screen.
+View is the basic building block of UI(User Interface) in android. View refers to the android.view.View class, which is the super class for all the GUI components like TextView, ImageView, Button etc.
+View can be considered as a rectangle on the screen that shows some type of content. It can be an image, a piece of text, a button or anything that an android application can display. The rectangle here is actually invisible, but every view occupies a rectangle shape.
+A View is also known as Widget in Android. Any visual(that we can see on screen) and interactive(with which user can interact with) is called a Widget.
+
+There are two attributes that are necessary for every View. These are: android:layout_height and android:layout_width.
+Most Commonly Used Android View classes:
+These views can be used to create a useful input and output fields.
+
+Text View
+EditText
+Button
+ImageView
+ImageButton
+CheckBox
+Radio button
+RadioGroup
+ListView
+Spinner
+AutoCompleteTextView
+SQLite is a opensource SQL database that stores data to a text file on a device. Android comes in with built in SQLite database implementation.
+
+SQLite supports all the relational database features. In order to access this database, you don't need to establish any kind of connections for it like JDBC,ODBC e.t.c
+Database - Package
+The main package is android.database.sqlite that contains the classes to manage your own databases
+Database - Creation
+In order to create a database you just need to call this method openOrCreateDatabase with your database name and mode as a parameter. It returns an instance of SQLite database which you have to receive in your own object.Its syntax is given below
+SQLiteDatabase mydatabase = openOrCreateDatabase("your database name",MODE_PRIVATE,null);
+Database - Insertion
+we can create table or insert data into table using execSQL method defined in SQLiteDatabase class. Its syntax is given below
+
+mydatabase.execSQL("CREATE TABLE IF NOT EXISTS TutorialsPoint(Username VARCHAR,Password VARCHAR);");
+mydatabase.execSQL("INSERT INTO TutorialsPoint VALUES('admin','admin');");
+Database - Fetching
+We can retrieve anything from database using an object of the Cursor class. We will call a method of this class called rawQuery and it will return a resultset with the cursor pointing to the table. We can move the cursor forward and retrieve the data.
+
+Cursor resultSet = mydatbase.rawQuery("Select * from TutorialsPoint",null);
+resultSet.moveToFirst();
+String username = resultSet.getString(0);
+String password = resultSet.getString(1);
+Database - Helper class
+For managing all the operations related to the database , an helper class has been given and is called SQLiteOpenHelper. It automatically manages the creation and update of the database.
+
+Gradle is a build system (open source) that is used to automate building, testing, deployment, etc. “build.gradle” are scripts where one can automate the tasks. For example, the simple task to copy some files from one directory to another can be performed by the Gradle build script before the actual build process happens. 
+Every Android project needs a Gradle for generating an apk from the .java and .xml files in the project. Simply put, a gradle takes all the source files (java and XML) and applies appropriate tools, e.g., converts the java files into dex files and compresses all of them into a single file known as apk that is actually used. There are two types of build.gradle scripts  
+
+Top-level build.gradle
+Module-level build.gradle
+In Android, a thread is a background process that can run independently of the main UI thread.
+The main thread, also known as the UI thread, is responsible for handling all UI updates and user interactions. Any code that updates the UI or interacts with the user should be run on the main thread.
+Worker threads are used for background tasks that should not block the main thread, such as network requests, database operations, and image processing.
+AsyncTask is a helper class that allows you to perform background tasks and update the UI from the same thread. However, it has some limitations and it’s recommended to use coroutines or other libraries for more complex tasks.
+Services are used for tasks that should continue running even when the app is not visible, such as playing music or downloading files.
+
+Working on multiple tasks at the same time is Multitasking. In the same way, multiple threads running at the same time in a machine is called Multi-Threading. 
+Threading in Android
+In Android, you can categorize all threading components into two basic categories:
+
+Threads that are attached to an activity/fragment: These threads are tied to the lifecycle of the activity/fragment and are terminated as soon as the activity/fragment is destroyed.
+Threads that are not attached to any activity/fragment: These threads can continue to run beyond the lifetime of the activity/fragment (if any) from which they were spawned.
+1. Threading Components that Attach to an Activity/Fragment
+AsyncTask
+
+Loaders
+
+2. Threading Components that Don’t Attach to an Activity/Fragment
+Service
+
+Intent Service
+
+For the above two threading components,There are five types of thread are using in Android Mobile Development which areas:-
+
+Main thread ---- When an application is launched in Android, it creates the first thread of execution, known as the “main” thread. The main thread is responsible for dispatching events to the appropriate user interface widgets as well as communicating with components from the Android UI toolkit.
+
+
+
+UI thread --- The UIThread is the main thread of execution for your application. This is where most of your application code is run. All of your application components (Activities, Services, ContentProviders, BroadcastReceivers) are created in this thread, and any system calls to those components are performed in this thread.
+UI Thread allows your tasks to do background work and then move the results to UI elements such as bitmaps.
+Worker thread ---- Worker threads are background threads. They are the threads that are created separately, other than the UI thread. Since blocking the UI thread is restricted according to the rule, the user should run the child processes and tasks in worker threads.
+
+Any thread ---- Denotes that the annotated method can be called from any thread (e.g. it is “thread-safe”.) If the annotated element is a class, then all methods in the class can be called from any thread.
+
+The main purpose of this method is to indicate that you believe a method can be called from any thread; static tools can then check that nothing you call from within this method or class has more strict threading requirements.
+
+
+Binder thread ---- Binder thread represents a separate thread of your service. Binder is a mechanism that provides Inter-Process Communication.
+
+Binder Thread is used in Android Service Binding with Interprocess Communication. Most of the time you will encounter this concept in Service calls with interfaces defined by Android Interface Definition Language (AIDL).
+Android Jetpack is a set of software components, libraries, tools, and guidance that helps developers to build robust android applications.
+The most fascinating aspect of the Jetpack is that it gets updated more frequently than the Android platform so that we can always get the advantage of the latest platform.
+To deal with the data changes and to reduce complications in the app life cycle, Jetpack introduced four Android Jetpack Components. Android Jetpack components are collections of Libraries that help developers design robust, testable, and maintainable apps.
+Android Jetpack Components
+
+These components help to simplify complex things and eliminates the majority of the boilerplate code from the application. Furthur is built around modern design principles such as separation of concerns, and deriving UI from a model.
+
+The components have been classified into four groups:
+
+Foundation Components
+Architecture Components
+Behavior Components
+UI Components
+
+Simply stated, the LoaderManager is responsible for managing one or more Loaders associated with an Activity or Fragment. Each Activity and each Fragment has exactly one LoaderManager instance that is in charge of starting, stopping, retaining, restarting, and destroying its Loaders.
+Android WorkManager is a background processing library which is used to execute background tasks which should run in a guaranteed way but not necessarily immediately. With WorkManager we can enqueue our background processing even when the app is not running and the device is rebooted for some reason. WorkManager also lets us define constraints necessary to run the task e.g. network availability before starting the background task.
+Android WorkManager can be a perfect background processing library to use when your task –
+
+1. Does not need to run at a specific time
+
+2. Can be deferred to be executed
+
+3. Is guaranteed to run even after the app is killed or device is restarted
+
+4. Has to meet constraints like battery supply or network availability before execution
+
+The simplest example for this can be when your app needs to upload a large chunk of user data to the server. This particular use case meets the criteria we mentioned above to choose WorkManager because:
+
+1. Results need not be reflected immediately in your Android app
+
+2. Data needs to be uploaded even when the upload begins and the user kills the app to work on some other app, and
+
+3. The network needs to be available in order to upload data on the server.
+
+Loaders simplify thread management by providing callback methods when events occur. Loaders persist and cache results across configuration changes to prevent duplicate queries. Loaders can implement an observer to monitor for changes in the underlying data source.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
