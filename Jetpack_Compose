@@ -1,0 +1,200 @@
+JETPACK COMPOSE
+
+Jetpack Compose is a modern toolkit for building native Android UI. Jetpack Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.
+
+Jetpack Compose is built around composable functions. These functions let you define your app's UI programmatically by describing how it should look and providing data dependencies, rather than focusing on the process of the UI's construction (initializing an element, attaching it to a parent, etc.). To create a composable function, just add the @Composable annotation to the function name.
+
+To make a function composable, add the @Composable annotation.
+
+The @Preview annotation lets you preview your composable functions within Android Studio without having to build and install the app to an Android device or emulator. The annotation must be used on a composable function that does not take in parameters. 
+
+The Column function lets you arrange elements vertically.
+You can use Row to arrange items horizontally and Box to stack elements.
+
+ To decorate or configure a composable, Compose uses modifiers. They allow you to change the composable's size, layout, appearance or add high-level interactions, such as making an element clickable. You can chain them to create richer composables.
+ 
+ 
+ Jetpack Compose provides an implementation of Material Design 3 and its UI elements out of the box. Material Design is built around three pillars: Color, Typography, and Shape. 
+ 
+ Surface is a basic building block for displaying content and can be used to wrap other composable to provide a background color, elevation, padding, and other layout properties.
+ 
+ 
+ To keep track of the state change, you have to use the functions remember and mutableStateOf.
+ 
+ Composable functions can store local state in memory by using remember, and track changes to the value passed to mutableStateOf. Composables (and their children) using this state will get redrawn automatically when the value is updated. This is called recomposition.
+
+By using Compose’s state APIs like remember and mutableStateOf, any changes to state automatically update the UI.
+
+
+
+
+Why Side-effects?
+The purpose of side effects in Jetpack Compose is to allow for the execution of non-UI related operations that change the state of the app outside of a Composable function in a controlled and predictable manner.
+
+Side effects, such as updating a database or making a network call, should be kept separate from the UI rendering logic to improve the performance and maintainability of the code.
+
+
+SIDE EFFECTS -- are set of API's that allow us to use non-UI code inside composable scope.
+It is a change of state of the app that happens outside the scope of a composable function.
+
+Types of effects :
+1. LaunchedEffect -- LaunchedEffect is a composable function that is used to launch a coroutine inside the scope of composable, when LaunchedEffect enters the composition, it launches a coroutine and cancels when it leaves composition. 
+LaunchedEffect takes multiple keys as params and if any of the key changes it cancels the existing coroutine and launch again. 
+This is useful for performing side effects, such as making network calls or updating a database, without blocking the UI thread.
+
+LaunchedEffect is a Composable function that executes a side effect in a separate coroutine scope. This function is useful for executing operations that can take a long time, such as network calls or animations, without blocking the UI thread.
+Key: Generally a composed state that acts as a trigger for executing the block
+
+Block: Provides a coroutine scope to run a (suspend)block of code based on a key change.
+
+2. rememberCoroutineScope -- To obtain a coroutine scope inside a callbacks like button clicked.
+To ensure that LaunchedEffect launches on the first composition, use it as is. But if you need manual control over the launch, use rememberCoroutineScope instead. 
+
+3. DisposableEffect -- Used to subscribe or unsubscribe an observable object.
+The DisposableEffect composable is utilized to execute an effect when a Composable function is initially created. It then clears the effect when the Composable is removed from the screen.
+We also use onDispose to dispose of disposable and stop the operation when the Composable is removed.
+
+4. derivedStateOf -- derivedStateOf is a composable that can be used to derive new state based on the values of other state variables. 
+It is useful when you need to compute a value that depends on other values, and you want to avoid recomputing the value unnecessarily.
+
+5. produceState -- produceState converts non-compose state into compose state. 
+It launches a coroutine scoped to the composition that can push values into a returned state. The producer is started when produceState enters the Composition and is stopped when it leaves the Composition. The returned State combines; setting the same value will not cause a recomposition.
+
+
+6. SideEffect -- SideEffect is used to publish compose state to non-compose code. 
+The SideEffect is triggered on every recomposition and it is not a coroutine scope, so suspend functions cannot be used within it.
+
+7. rememberUpdatedState  -- When you want to reference a value in effect that shouldn’t restart if the value changes then use rememberUpdatedState.
+rememberUpdatedState is used when we want to keep an updated reference to a variable in a long-running side-effect without having the side-effect to restart on recomposition
+
+8. snapshotFlow -- snapshotFlow is a function that allows you to create a flow that emits the current value of a state object, and then emits any subsequent changes to that object. 
+This can be useful for creating reactive UIs that respond to changes in state, without having to manually manage callbacks or listeners.
+
+SnapshotFlow is used to calculate the difference between the previous and current state using flows. It is a helper class provided by Compose and can be used to create flows that monitor state objects.
+
+When subscribing to a flow, SnapshotFlow takes a snapshot of the current state and then watches for any changes in that state. If the state changes, it takes a new snapshot and calculates the difference between the new and previous snapshots. This allows for improved performance by only redrawing the parts that have changed.
+
+
+Use Cases of DisposableEffect
+
+Adding and removing event listeners
+Starting and stopping animations
+Bind and unbinding sensors resources such as Camera, LocationManager, etc
+Managing database connections
+
+Use Cases of LaunchedEffect
+
+Fetching Data from a Network
+Performing Image Processing
+Updating a Database
+For showing Snackbar
+For re-setting UiStates
+For Navigation Events
+Starting Animations/Some one-time events
+
+Use Cases of SideEffect
+
+Logging and Analytics
+Performing One-Time Initialization such as setting up a connection to a Bluetooth device, loading data from a file, or initializing a library.
+
+Uses-cases of rememberCoroutineScope:
+
+onClicks
+Animations
+Callbacks
+
+LaunchedEffect: run suspend functions in the scope of a composable
+rememberCoroutineScope: obtain a composition-aware scope to launch a coroutine outside a composable
+rememberUpdatedState: reference a value in an effect that shouldn't restart if the value changes
+DisposableEffect: effects that require cleanup
+SideEffect: publish Compose state to non-Compose code
+produceState: convert non-Compose state into Compose state
+derivedStateOf: convert one or multiple state objects into another state
+snapshotFlow: convert Compose's State into Flows
+
+
+ A side-effect is a change to the state of the app that happens outside the scope of a composable function.
+
+
+An effect is a composable function that doesn't emit UI and causes side effects to run when a composition completes.
+
+Composition: a description of the UI built by Jetpack Compose when it executes composables.
+
+Initial composition: creation of a Composition by running composables the first time.
+
+Recomposition: re-running composables to update the Composition when data changes.
+
+
+Composable functions can use the remember API to store an object in memory. A value computed by remember is stored in the Composition during initial composition, and the stored value is returned during recomposition. remember can be used to store both mutable and immutable objects.
+
+
+remember stores objects in the Composition, and forgets the object when the composable that called remember is removed from the Composition.
+
+A stateless composable is a composable that doesn't hold any state. An easy way to achieve stateless is by using state hoisting.
+
+ The stateful version is convenient for callers that don't care about the state, and the stateless version is necessary for callers that need to control or hoist the state.
+ 
+ State hoisting in Compose is a pattern of moving state to a composable's caller to make a composable stateless. The general pattern for state hoisting in Jetpack Compose is to replace the state variable with two parameters:
+
+value: T: the current value to display
+onValueChange: (T) -> Unit: an event that requests the value to change, where T is the proposed new value
+
+ State holders manage logic and state of composables.
+ 
+ var name by remember { mutableStateOf("") }
+
+The Navigation component uses a navigation graph to manage your app's navigation. The navigation graph is a data structure that contains each destination within your app and the connections between them.
+
+The NavController holds a "back stack" that contains the destinations the user has visited. As the user navigates to screens throughout your app, the NavController adds and removes destinations to and from the back stack.
+
+In being a stack, the back stack is a "last in, first out" data structure. The NavController therefore pushes items to and pops items from the top of the stack.
+
+
+
+A Composable that declares a state variable is a stateful Composable. In our case, the MainComposable is stateful, as it declares the userName variable.
+If instead, the userName variable was passed in as a parameter, our MainComposable would be stateless.
+
+// STATEFUL
+@Composable 
+fun MainComposable() {
+     //...
+     var userName by remember { mutableStateOf("") }
+     //...
+}
+
+// STATELESS 
+@Composable 
+fun MainComposable(userName: String, userNameChanged: (newUserName: String) -> Unit) {
+     //...
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+Exclusions from Jacoco Report
+
+Excluding Using Plugin Configuration
+Classes and packages can be excluded using standard * and ? wildcard syntax in the plugin configuration:
+
+* matches zero or more characters
+** matches zero or more directories
+? matches a single character
+
+Excluding With Custom Annotation
+Starting from JaCoCo 0.8.2, we can exclude classes and methods by annotating them with a custom annotation with the following properties:
+
+The name of the annotation should include Generated.
+The retention policy of annotation should be runtime or class.
